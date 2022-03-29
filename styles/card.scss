@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$pale-blue: hsl(225, 100%, 94%);
+$bright-blue: hsl(245, 75%, 52%);
+$desaturated-bright-blue: hsl(245, 50%, 52%);
+
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+
+body {
+    background-color: $pale-blue;
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+.card {
+    max-width: 350px;
+    min-width: 270px;
+    background: white;
+    border-radius: 1em;
+    overflow: hidden;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1em;
+    box-shadow: 3px 3px 10px $pale-blue;
+
+    img {
+        width: 100%;
+    }
+
+    .content {
+        text-align: center;
+        padding: 0 2em 1.5em 2em;
+
+        > * {
+            margin-top: 1em;
+        }
+
+        h3 {
+            margin: 1em 0 0.5em;
+            color: $dark-blue;
+            font-weight: 900;
+        }
+
+        > small {
+            color: $desaturated-blue;
+            padding: 0 1em;
+        }
+
+        .choosed-plan {
+            background: $very-pale-blue;
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+            border-radius: 0.5rem;
+
+            > .plan-content {
+                display: flex;
+                gap: 1em;
+                align-items: center;
+                
+                .music-icon {
+                    height: 44px;
+                    width: 44px;
+                }
+                
+                .text h5 {
+                    color: $dark-blue;
+                    margin: 0;
+                }
+                
+                .text small {
+                    color: $desaturated-blue;
+                }
+            }
+        }
+
+        > button {
+            width: 100%;
+        }
+    }
+}
+
+.btn-link {
+    background: transparent;
+    color: $bright-blue;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    font-size: smaller;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 150ms;
+
+    &:hover {
+        color: $desaturated-bright-blue;
+    }
+}
+
+.btn-primary {
+    background: $bright-blue;
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.8em 2em;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px $desaturated-blue;
+    cursor: pointer;
+    transition: 150ms;
+
+    &:hover {
+        background: $desaturated-bright-blue;
+    }
+}
+
+.btn-no-bg {
+    background: transparent;
+    color: $desaturated-blue;    
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.8em 2em;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 150ms;
+
+    &:hover {
+        color: $dark-blue;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        background-image: url("../images/pattern-background-mobile.svg");
+    }
+
+    .card .content {
+        padding: 0 1.5em 1em 1.5em;
+    }
+}
